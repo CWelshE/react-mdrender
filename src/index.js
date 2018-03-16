@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import marked from 'marked';
 
+// This is CSS Modules plus SCSS.
+import styles from '../styles/md.scss';
 
+// Renders markdown from passed props.
 class Markdown extends React.Component {
   compileMarkdown(md) {
     return {__html: marked(md)};
@@ -10,13 +13,14 @@ class Markdown extends React.Component {
   render() {
     return (
       <div
-        className="md-render"
+        className={styles['md-render']}
         dangerouslySetInnerHTML={this.compileMarkdown(this.props.text)}>
       </div>
     );
   }
 }
 
+// Takes user input, and sends it over to a Markdown component.
 class MarkdownInput extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +37,7 @@ class MarkdownInput extends React.Component {
     return (
       <div className="md-wrapper">
         <textarea
-          className="md-input"
+          className={styles['md-input']}
           onChange={this.handleChange}/>
         <Markdown text={this.state.value}/>
       </div>
