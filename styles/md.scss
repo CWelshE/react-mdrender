@@ -1,7 +1,30 @@
+ @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');
+
+ * {
+   font-family: 'IBM Plex Serif', serif;
+ }
+
+:global #root {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+ }
+
+.md-container {
+  display: flex;
+}
+
 .md-render {
-  background: red;
+  background: rgba(230,230,230,0.8);
+  padding: 2em;
+  min-width: 200px;
+  min-height: 200px;
+  flex-basis: 250px;
 }
 
 .md-input {
-  background: blue;
+  @extend .md-render;
+  background: rgba(200,200,200,0.9);
+  border: none;
 }

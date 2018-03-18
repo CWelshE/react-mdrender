@@ -35,7 +35,7 @@ class MarkdownInput extends React.Component {
 
   render() {
     return (
-      <div className="md-wrapper">
+      <div className={styles['md-container']}>
         <textarea
           className={styles['md-input']}
           onChange={this.handleChange}/>
